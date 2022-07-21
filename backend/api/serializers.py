@@ -5,9 +5,9 @@ from django.shortcuts import get_object_or_404
 from drf_base64.fields import Base64ImageField
 from rest_framework import serializers
 
+from foodgram.settings import ERR_MSG
 from recipes.models import Ingredient, Recipe, RecipeIngredient, Subscribe, Tag
 from users.models import CustomUser as User
-from foodgram.settings import ERR_MSG
 
 
 class TokenSerializer(serializers.Serializer):
