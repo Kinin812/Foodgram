@@ -12,7 +12,6 @@ router_v1.register('tags', TagsViewSet)
 router_v1.register('ingredients', IngredientsViewSet)
 router_v1.register('recipes', RecipesViewSet)
 
-
 urlpatterns = [path('auth/token/login/', AuthToken.as_view(), name='login'),
                path('users/set_password/', set_password, name='set_password'),
                path('users/<int:user_id>/subscribe/',
