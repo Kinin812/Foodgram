@@ -9,9 +9,10 @@ services:
       - ./.env
 
   backend:
-    build:
-      context: ../backend
-      dockerfile: Dockerfile
+#    build:
+#      context: ../backend
+#      dockerfile: Dockerfile
+    image: kinin812/foodgram_backend:latest
     restart: always
     volumes:
       - data_value:/app/data/
@@ -23,9 +24,10 @@ services:
       - ./.env
 
   frontend:
-    build:
-      context: ../frontend
-      dockerfile: Dockerfile
+#    build:
+#      context: ../frontend
+#      dockerfile: Dockerfile
+    image: kinin812/foodgram_frontend:latest
     volumes:
       - ../frontend/:/app/result_build/
     depends_on:

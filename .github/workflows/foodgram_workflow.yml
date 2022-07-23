@@ -50,9 +50,13 @@ jobs:
               tags: ${{ secrets.DOCKER_USERNAME }}/foodgram_frontend:latest
 
   deploy:
-      if: ${{ github.ref }} == 'master'
       runs-on: ubuntu-latest
       needs: build_and_push_to_docker_hub
+      if:
+        contains('
+        refs/heads/master
+        refs/heads/main
+        ', github.ref)
       steps:
       - name: pull docker image
         uses: appleboy/ssh-action@master
