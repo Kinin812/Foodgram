@@ -1,5 +1,13 @@
 # Foodgram - Продуктовый помощник
 
+Проект доступен по адресу: [http://yp.hopto.org](http://yp.hopto.org)
+
+[Админка](http://yp.hopto.org/admin)   
+admin: admin_food  
+test: test_food
+---
+
+
 ![example workflow](https://github.com/Kinin812/foodgram-project-react/actions/workflows/foodgram_workflow.yml/badge.svg)  
 
 ## Стек технологий
