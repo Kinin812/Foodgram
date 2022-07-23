@@ -70,7 +70,6 @@ jobs:
             sudo docker pull ${{ secrets.DOCKER_USERNAME }}/foodgram_frontend:latest
             sudo docker-compose stop
             sudo docker-compose rm foodgram_backend
-            sudo docker-compose rm web --noinput
       - name: docker-compose up
         uses: appleboy/ssh-action@master
         with:
