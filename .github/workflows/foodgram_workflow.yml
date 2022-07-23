@@ -68,9 +68,8 @@ jobs:
           script: |
             sudo docker pull ${{ secrets.DOCKER_USERNAME }}/foodgram_backend:latest
             sudo docker pull ${{ secrets.DOCKER_USERNAME }}/foodgram_frontend:latest
-            cd infra/
             sudo docker-compose stop
-            sudo docker-compose rm backend
+            sudo docker-compose rm foodgram_backend
       - name: docker-compose up
         uses: appleboy/ssh-action@master
         with:
@@ -79,7 +78,6 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           passphrase: ${{ secrets.PASSPHRASE }}
           script: |
-            cd infra/
             sudo touch .env
             echo DB_ENGINE=${{ secrets.DB_ENGINE }} >> .env
             echo DB_NAME=${{ secrets.DB_NAME }} >> .env
@@ -103,4 +101,4 @@ jobs:
       with:
         to: ${{ secrets.TELEGRAM_TO }}
         token: ${{ secrets.TELEGRAM_TOKEN }}
-        message: ${{ github.workflow }} для репозитория ${{ github.repository }} успешно выполнен!
+        message: ${{ github.workflow }} успешно выполнен!
