@@ -181,7 +181,8 @@ class RecipesViewSet(viewsets.ModelViewSet):
     def download_shopping_cart(self, request):
         shopping_cart = (
             request.user.shopping_cart.recipe.values(
-                'ingredients__name', 'ingredients__measurement_unit'
+                'ingredients__name',
+                'ingredients__measurement_unit'
             ).annotate(amount=Sum('recipe__amount')).order_by()
         )
         return draw_pdf(shopping_cart)

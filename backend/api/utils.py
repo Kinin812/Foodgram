@@ -11,9 +11,9 @@ FILENAME = 'shoppingcart.pdf'
 def draw_pdf(shopping_cart):
     buffer = io.BytesIO()
     page = canvas.Canvas(buffer)
-    pdfmetrics.registerFont(TTFont("Vera", "Vera.ttf"))
+    pdfmetrics.registerFont(TTFont('YakumoPreschoolHand', 'YakumoPreschoolHand.ttf', 'UTF-8'))
     x_position, y_position = 50, 800
-    page.setFont('Vera', 14)
+    page.setFont('YakumoPreschoolHand', 14)
     if shopping_cart:
         indent = 20
         page.drawString(x_position, y_position, 'Cписок покупок:')
@@ -31,7 +31,7 @@ def draw_pdf(shopping_cart):
         buffer.seek(0)
         return FileResponse(
             buffer, as_attachment=True, filename=FILENAME)
-    page.setFont('Vera', 24)
+    page.setFont('YakumoPreschoolHand', 24)
     page.drawString(
         x_position,
         y_position,
