@@ -11,7 +11,10 @@ FILENAME = 'shoppingcart.pdf'
 def draw_pdf(shopping_cart):
     buffer = io.BytesIO()
     page = canvas.Canvas(buffer)
-    pdfmetrics.registerFont(TTFont('YakumoPreschoolHand', 'YakumoPreschoolHand.ttf', 'UTF-8'))
+    pdfmetrics.registerFont(TTFont(
+        'YakumoPreschoolHand',
+        'YakumoPreschoolHand.ttf', 'UTF-8'
+    ))
     x_position, y_position = 50, 800
     page.setFont('YakumoPreschoolHand', 14)
     if shopping_cart:
