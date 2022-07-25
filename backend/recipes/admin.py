@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.utils.safestring import mark_safe
 from foodgram.settings import EMPTY_MSG
 
-from .forms import TagForm
+from .forms import TagForm, AtLeastOneRequiredInlineFormSet
 from .models import (FavoriteRecipe, Ingredient, Recipe, RecipeIngredient,
                      ShoppingCart, Subscribe, Tag)
 
@@ -11,6 +11,7 @@ admin.site.site_header = 'Foodgram'
 
 class RecipeIngredientAdmin(admin.TabularInline):
     model = RecipeIngredient
+    formset = AtLeastOneRequiredInlineFormSet
     autocomplete_fields = ('ingredient',)
 
 

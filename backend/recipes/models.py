@@ -88,7 +88,7 @@ class Recipe(models.Model):
         ordering = ('-pub_date',)
 
     def __str__(self):
-        return f'Автор: {self.author.username}, Рецепт: {self.name}'
+        return f'{self.name}'
 
 
 class RecipeIngredient(models.Model):
@@ -119,6 +119,9 @@ class RecipeIngredient(models.Model):
                 fields=('recipe', 'ingredient',), name='unique ingredient'
             )
         ]
+
+    def __str__(self):
+        return f'{self.recipe} - {self.ingredient}'
 
 
 class Subscribe(models.Model):
