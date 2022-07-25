@@ -22,11 +22,20 @@ def draw_pdf(shopping_cart):
         indent = 20
         page.drawString(x_position, y_position, 'Артем, привет!')
         y_position -= 25
-        page.drawString(x_position, y_position, 'Очистка списка покупок после скачивания файла не соответствует')
+        page.drawString(
+            x_position, y_position,
+            'Очистка списка покупок после скачивания файла не соответствует'
+        )
         y_position -= 15
-        page.drawString(x_position, y_position, 'методологии HTTP, определенной протоколом RFC 2616, а именно:')
+        page.drawString(
+            x_position, y_position,
+            'методологии HTTP, определенной протоколом RFC 2616, а именно:'
+        )
         y_position -= 15
-        page.drawString(x_position, y_position, 'GET (метод указан в ТЗ) — применяется, чтобы получить ресурс.')
+        page.drawString(
+            x_position, y_position,
+            'GET (метод указан в ТЗ) — применяется, чтобы получить ресурс.'
+        )
         y_position -= 40
         page.setFillColorRGB(0, 0, 0)
         page.setFont('YakumoPreschoolHand', 14)
