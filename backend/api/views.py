@@ -176,16 +176,19 @@ class RecipesViewSet(viewsets.ModelViewSet):
         serializer.save(author=self.request.user)
 
     @action(
-        detail=False, methods=['get'], permission_classes=(IsAuthenticated,)
+        detail=False, methods=['get'],
+        permission_classes=(IsAuthenticated,)
     )
     def download_shopping_cart(self, request):
-        shopping_cart = (
+        sh_cart = (
             request.user.shopping_cart.recipe.values(
                 'ingredients__name',
                 'ingredients__measurement_unit'
             ).annotate(amount=Sum('recipe__amount')).order_by()
         )
-        return draw_pdf(shopping_cart)
+        temp = draw_pdf(sh_cart)
+        request.user.shopping_cart.recipe.clear()
+        return temp
 
 
 class TagsViewSet(PermissionAndPaginationMixin, viewsets.ModelViewSet):
