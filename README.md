@@ -123,5 +123,5 @@ http://127.0.0.1/api/docs/
 ---
 
 ### Авторы
-[Kinin812](https://github.com/Kinin812) - Python разработчик. Разработал бэкенд и деплой для сервиса Foodgram.  
+[Kinin812](https://github.com/Kinin812) - Бэкенд и деплой для сервиса Foodgram.  
 [Яндекс.Практикум](https://github.com/yandex-praktikum) Фронтенд для сервиса Foodgram.
