@@ -119,4 +119,4 @@ http://127.0.0.1/api/docs/
 
 ### Authors
 [Kinin812](https://github.com/Kinin812) - Backend and deployment for Foodgram service.  
-[Яндекс.Практикум](https://github.com/yandex-praktikum) Frontend for Foodgram service.
+[Yandex.Practicum](https://github.com/yandex-praktikum) Frontend for Foodgram service.
